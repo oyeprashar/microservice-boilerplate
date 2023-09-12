@@ -3,7 +3,7 @@ package responseHandler
 import (
 	"encoding/json"
 	"errors"
-	"github.com/oyeprashar/microservice-boilerplate/internal/errorHandler"
+	"github.com/oyeprashar/microservice-boilerplate/errorHandler"
 	"github.com/sirupsen/logrus"
 	"net/http"
 	"syscall"

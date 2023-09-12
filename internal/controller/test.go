@@ -2,7 +2,7 @@ package controller
 
 import (
 	"context"
-	"github.com/oyeprashar/microservice-boilerplate/internal/errorHandler"
+	"github.com/oyeprashar/microservice-boilerplate/errorHandler"
 	"github.com/oyeprashar/microservice-boilerplate/internal/requestHandler"
 	"github.com/oyeprashar/microservice-boilerplate/internal/responseHandler"
 	"net/http"

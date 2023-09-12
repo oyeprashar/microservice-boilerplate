@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"github.com/go-playground/validator"
-	"github.com/oyeprashar/microservice-boilerplate/internal/structs"
+	"github.com/oyeprashar/microservice-boilerplate/structs"
 	"net/http"
 )
 
