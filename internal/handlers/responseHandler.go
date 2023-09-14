@@ -1,4 +1,4 @@
-package responseHandler
+package handlers
 
 import (
 	"encoding/json"
@@ -36,8 +36,8 @@ func respondwithJSON(w http.ResponseWriter, r *http.Request, code int, payload i
 	}
 }
 
-// GenericRes : is used when we want to return the data back to client with no error
-func GenericRes(w http.ResponseWriter, r *http.Request) {
+// RespondWithSuccess : is used when we want to return the data back to client with no error
+func RespondWithSuccess(w http.ResponseWriter, r *http.Request) {
 	resData := r.Context().Value("resData") // read the data from the context
 	var payload = map[string]interface{}{
 		"status": true,

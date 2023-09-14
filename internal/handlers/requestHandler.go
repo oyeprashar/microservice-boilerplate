@@ -1,4 +1,4 @@
-package requestHandler
+package handlers
 
 import (
 	"context"
@@ -9,7 +9,7 @@ import (
 )
 
 /*
-	This file is used to validate the requests
+	In this file we decode the request and validate them before sending to the controllers
 */
 
 func HealthRequest(ctx context.Context, r *http.Request) (structs.HealthReq, error) {

@@ -15,10 +15,11 @@ func main() {
 	/*
 		TODO: Things to add
 			1. Handler with all the required middleware
-			2. Prometheus and Grafana
-			3. MongoDB for logging the request and response
-			4. Unit test for this boiler plate (in the most organized way, probably in a single folder (Check))
-			5. Add configs based on the ENVs. Local | Dev | Prod
+			2. The service should log all the request and response that are being processsed
+			3. Prometheus and Grafana
+			4. MongoDB for logging the request and response
+			5. Unit test for this boiler plate (in the most organized way, probably in a single folder (Check))
+			6. Add configs based on the ENVs. Local | Dev | Prod
 	*/
 
 	// TODO: This file should be as minimal as possible. So refactor it

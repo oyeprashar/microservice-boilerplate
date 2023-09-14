@@ -29,12 +29,15 @@ func writeResponse(w http.ResponseWriter, code int, message string) {
 /*
 	When a panic occurs in a Go program, it typically causes the program to terminate abruptly unless the panic
 	is recovered. By recovering from panics, you can handle errors gracefully and prevent your program from crashing.
+
+	Recovering from panics are very important as we cannot catch it like we catch errors moreover it will abruptly
+	stop the service which we don't want in any-case
 */
 
 func Recovery(w http.ResponseWriter, request *http.Request, httpStatusCode int) {
 	if r := recover(); r != nil {
 
-		// panic with message
+		// panic with happens with a string message
 		msg, ok := r.(string)
 		if ok {
 			writeResponse(w, httpStatusCode, msg)
@@ -43,7 +46,8 @@ func Recovery(w http.ResponseWriter, request *http.Request, httpStatusCode int) 
 			// panic with error
 			err, ok := r.(error)
 			if ok {
-				// if error object found report to sentry
+
+				// panic happens an error
 				writeResponse(w, httpStatusCode, err.Error())
 
 				// panic with something else

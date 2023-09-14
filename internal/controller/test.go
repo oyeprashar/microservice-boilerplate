@@ -3,24 +3,24 @@ package controller
 import (
 	"context"
 	"github.com/oyeprashar/microservice-boilerplate/errorHandler"
-	"github.com/oyeprashar/microservice-boilerplate/internal/requestHandler"
-	"github.com/oyeprashar/microservice-boilerplate/internal/responseHandler"
+	"github.com/oyeprashar/microservice-boilerplate/internal/handlers"
 	"net/http"
 )
 
 /*
-	All the controller for the /test/<> will be written here
+	All the controller for the /test/<endpoint> will be written here
 */
 
+// HealthCont : is a test controller
 func HealthCont(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		defer errorHandler.Recovery(w, r, http.StatusConflict)
 
 		// validate the request
-		requestObj, err := requestHandler.HealthRequest(r.Context(), r)
+		requestObj, err := handlers.HealthRequest(r.Context(), r)
 
 		if err != nil {
-			responseHandler.RespondWithError(w, r, http.StatusBadRequest, "bad request")
+			handlers.RespondWithError(w, r, http.StatusBadRequest, "bad request")
 			return
 		}
 
